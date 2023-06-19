@@ -5,10 +5,37 @@
  */
 package paquete3;
 
-/**
- *
- * @author reroes
- */
-public class PrestamoAutomovil {
-    
+import paquete2.Persona;
+import paquete2.Prestamo;
+
+public class PrestamoAutomovil extends Prestamo{
+    public String tipoAuto;
+    public String Marca;
+    public Persona garante1;
+    public double valorAuto;
+    public double valorMensual;
+
+    public PrestamoAutomovil(Persona beneficiario, double prestamoMeses, String ciudadPrestamo, String tipoAuto, String marca, Persona gar, double valorAuto) {
+        super(beneficiario, (int) prestamoMeses, ciudadPrestamo);
+        this.tipoAuto = tipoAuto;
+        this.Marca = marca;
+        this.garante1 = garante1;
+        this.valorAuto = valorAuto;
+        this.valorMensual = valorMensual;
+    }
+
+    public void CalularValorMensualA() {
+        this.valorMensual = (this.valorAuto / this.prestamoMeses);
+    }
+
+    @Override
+    public String toString() {
+        return "PrestamoAutomovil{" +
+                "tipoAuto='" + tipoAuto + '\'' +
+                ", Marca='" + Marca + '\'' +
+                ", garante1=" + garante1 +
+                ", valorAuto=" + valorAuto +
+                ", valorMensual=" + valorMensual +
+                '}';
+    }
 }
